@@ -1,83 +1,89 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background-color: #2b4a8c; /* Matches your portfolio blue */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
-/* Page animation */
-.container {
-    width: 90%;
-    max-width: 600px;
-    margin-top: 40px;
+h1, h2 {
+    color: #fff;
     text-align: center;
-    animation: fadeIn 1s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-h1 {
-    color: white;
-}
-
-/* Card styling */
+/* --- The White Cards (About Me & Contact) --- */
 .card {
-    background: white;
-    padding: 25px;
-    margin: 20px auto;
-    border-radius: 15px;
-    max-width: 500px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    transition: 0.3s;
+    background-color: #ffffff;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
-/* Card hover animation */
-.card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+.card h2 {
+    color: #000;
+    margin-bottom: 15px;
 }
 
-/* Input fields */
-input, textarea {
-    width: 100%;
+/* --- Form Input Styling --- */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact-form input, 
+#contact-form textarea {
+    width: 90%;
     padding: 12px;
     margin: 10px 0;
-    border-radius: 10px;
     border: 1px solid #ccc;
-    box-sizing: border-box; /* 🔥 fixes overflow */
-    transition: 0.3s;
+    border-radius: 10px; /* Rounded corners like your screenshot */
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
 }
 
-/* Input focus animation */
-input:focus, textarea:focus {
-    border-color: #2a5298;
-    box-shadow: 0 0 10px rgba(42,82,152,0.5);
-    transform: scale(1.02);
+/* Highlight the box when you click it */
+#contact-form input:focus, 
+#contact-form textarea:focus {
+    border-color: #2b4a8c;
 }
 
-/* Button styling */
-button {
-    background: linear-gradient(135deg, #2a5298, #1e3c72);
+/* Set height for the message box */
+#contact-form textarea {
+    height: 100px;
+    resize: none; /* Prevents users from stretching it weirdly */
+}
+
+/* --- The Send Button --- */
+#send-btn {
+    background-color: #2b4a8c;
     color: white;
+    padding: 12px 30px;
     border: none;
-    padding: 12px 25px;
     border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    margin-top: 15px;
+    transition: background-color 0.3s;
 }
 
-/* Button hover animation */
-button:hover {
-    transform: scale(1.1);
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+#send-btn:hover {
+    background-color: #1a3366;
+}
+
+/* --- The Success Message Styling --- */
+#success-message {
+    display: none; /* Hidden until the button is clicked */
+    color: #28a745;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px;
 }
