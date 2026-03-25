@@ -1,0 +1,83 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+}
+
+/* Page animation */
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin-top: 40px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: white;
+}
+
+/* Card styling */
+.card {
+    background: white;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 15px;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* Card hover animation */
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Input fields */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* 🔥 fixes overflow */
+    transition: 0.3s;
+}
+
+/* Input focus animation */
+input:focus, textarea:focus {
+    border-color: #2a5298;
+    box-shadow: 0 0 10px rgba(42,82,152,0.5);
+    transform: scale(1.02);
+}
+
+/* Button styling */
+button {
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button hover animation */
+button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
