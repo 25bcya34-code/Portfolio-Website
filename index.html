@@ -1,171 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Julie's Portfolio</title>
-    <style>
-        /* --- Global Styles --- */
-        body {
-            background-color: #2b4a8c;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0;
-            padding: 40px 20px;
-            overflow-x: hidden; /* Prevents horizontal scroll during animations */
-        }
-
-        h1 {
-            color: white;
-            margin-bottom: 30px;
-            /* Animation: Fade in from top */
-            animation: fadeInDown 1s ease-out;
-        }
-
-        /* --- Card Animations --- */
-        .card {
-            background-color: #ffffff;
-            width: 100%;
-            max-width: 500px;
-            margin-bottom: 25px;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            text-align: center;
-            
-            /* Initial state for animation */
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        /* Delay the second card slightly for a "staggered" look */
-        .card:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        /* --- Interactive Hover Effects --- */
-        .card:hover {
-            transform: scale(1.02);
-            transition: transform 0.3s ease;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-        }
-
-        /* --- Form Styling --- */
-        #contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        #contact-form input, 
-        #contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-size: 16px;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-
-        /* Input focus animation */
-        #contact-form input:focus, 
-        #contact-form textarea:focus {
-            border-color: #2b4a8c;
-            box-shadow: 0 0 8px rgba(43, 74, 140, 0.2);
-            outline: none;
-        }
-
-        #send-btn {
-            background-color: #2b4a8c;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        #send-btn:hover {
-            background-color: #1a3366;
-            letter-spacing: 1px; /* Subtle text spread on hover */
-        }
-
-        #send-btn:active {
-            transform: scale(0.95); /* Shrinks slightly when clicked */
-        }
-
-        /* --- Animation Keyframes --- */
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* --- Success Message Animation --- */
-        #success-message {
-            display: none;
-            color: #28a745;
-            font-weight: bold;
-            padding: 20px 0;
-            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        @keyframes popIn {
-            from { transform: scale(0.5); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-    </style>
+    <title>Julie Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Welcome to My Portfolio</h1>
+<nav>
+    <h2>Julie</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="home" class="section">
+    <h1>Hi, I'm <span>Julie</span></h1>
+    <p>
+        A passionate BCA Cyber Security student focused on building secure 
+        and modern web applications.
+    </p>
+</section>
+
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+        I am currently pursuing BCA in Cyber Security. I am interested in 
+        system security, identifying vulnerabilities, and developing user-friendly applications.
+    </p>
+</section>
+
+<section id="projects" class="section">
+    <h2>My Projects</h2>
 
     <div class="card">
-        <h2>About Me</h2>
-        <p>Hello! I am Julie, a student exploring web development.</p>
+        <h3>Portfolio Website</h3>
+        <p>Created using HTML, CSS, JavaScript.</p>
     </div>
 
     <div class="card">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="Enter your name" required>
-            <input type="email" id="email" placeholder="Enter your email" required>
-            <textarea id="message" placeholder="Type a message..." required></textarea>
-            <button type="submit" id="send-btn">Send</button>
-        </form>
-        <div id="success-message">
-            <p>✅ Message sent successfully!</p>
-        </div>
+        <h3>Contact Form with Node.js</h3>
+        <p>Backend built using Express.</p>
     </div>
+</section>
 
-    <script>
-        const form = document.getElementById('contact-form');
-        const msg = document.getElementById('success-message');
+<section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="email" id="email" placeholder="Enter your email">
+    <textarea id="message" placeholder="Send your message"></textarea>
+</form>
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            form.style.display = 'none';
-            msg.style.display = 'block';
-        });
-    </script>
+<p id="responseMsg"></p>
+
+</section>
+
+<script src="script.js"></script>
 
 </body>
 </html>

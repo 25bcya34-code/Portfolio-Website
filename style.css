@@ -1,89 +1,91 @@
 body {
-    background-color: #2b4a8c; /* Matches your portfolio blue */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-h1, h2 {
-    color: #fff;
-    text-align: center;
-}
-
-/* --- The White Cards (About Me & Contact) --- */
-.card {
-    background-color: #ffffff;
-    width: 80%;
-    max-width: 600px;
-    margin: 20px 0;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    text-align: center;
-}
-
-.card h2 {
-    color: #000;
-    margin-bottom: 15px;
-}
-
-/* --- Form Input Styling --- */
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#contact-form input, 
-#contact-form textarea {
-    width: 90%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 10px; /* Rounded corners like your screenshot */
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-/* Highlight the box when you click it */
-#contact-form input:focus, 
-#contact-form textarea:focus {
-    border-color: #2b4a8c;
-}
-
-/* Set height for the message box */
-#contact-form textarea {
-    height: 100px;
-    resize: none; /* Prevents users from stretching it weirdly */
-}
-
-/* --- The Send Button --- */
-#send-btn {
-    background-color: #2b4a8c;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d1117;
     color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.3s;
+    scroll-behavior: smooth;
 }
 
-#send-btn:hover {
-    background-color: #1a3366;
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: #161b22;
 }
 
-/* --- The Success Message Styling --- */
-#success-message {
-    display: none; /* Hidden until the button is clicked */
-    color: #28a745;
-    font-size: 18px;
-    font-weight: bold;
+nav h2 {
+    color: #58a6ff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Sections */
+.section {
+    padding: 80px 40px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1 span {
+    color: #58a6ff;
+}
+
+/* Cards */
+.card {
+    background: #161b22;
     padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Form */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Button animation */
+button {
+    background: #58a6ff;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1f6feb;
+    transform: scale(1.1);
+}
+
+/* Success message */
+#successMsg {
+    color: #00ffcc;
+    margin-top: 10px;
 }
