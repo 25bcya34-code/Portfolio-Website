@@ -15,5 +15,13 @@
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "mysql2": "^3.20.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/25bcya34-code/Portfolio-Website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/25bcya34-code/Portfolio-Website/issues"
+  },
+  "homepage": "https://github.com/25bcya34-code/Portfolio-Website#readme"
 }

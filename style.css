@@ -1,5 +1,10 @@
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
     background: #0d1117;
     color: white;
@@ -29,12 +34,21 @@ nav a {
     text-decoration: none;
 }
 
+nav a:hover {
+    color: #58a6ff;
+}
+
 /* Sections */
 .section {
+    min-height: 100vh;
     padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     opacity: 0;
     transform: translateY(40px);
-    transition: all 0.8s ease;
+    transition: 0.8s;
 }
 
 .section.show {
@@ -42,7 +56,16 @@ nav a {
     transform: translateY(0);
 }
 
-h1 span {
+/* Home */
+#home {
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 3rem;
+}
+
+#home span {
     color: #58a6ff;
 }
 
@@ -52,7 +75,8 @@ h1 span {
     padding: 20px;
     margin: 15px 0;
     border-radius: 10px;
-    transition: transform 0.3s;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.2);
 }
 
 .card:hover {
@@ -68,24 +92,27 @@ input, textarea {
     border: none;
 }
 
-/* Button animation */
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px #58a6ff;
+}
+
+/* Button */
 button {
     background: #58a6ff;
     color: black;
-    padding: 10px 20px;
+    padding: 10px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 button:hover {
     background: #1f6feb;
-    transform: scale(1.1);
 }
 
-/* Success message */
-#successMsg {
+/* Message */
+#responseMsg {
     color: #00ffcc;
     margin-top: 10px;
 }

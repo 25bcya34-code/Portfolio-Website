@@ -3,7 +3,9 @@
 <head>
     <title>Julie Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 
 <nav>
@@ -27,8 +29,8 @@
 <section id="about" class="section">
     <h2>About Me</h2>
     <p>
-        I am currently pursuing BCA in Cyber Security. I am interested in 
-        system security, identifying vulnerabilities, and developing user-friendly applications.
+        I am currently pursuing BCA in Cyber Security. I enjoy exploring 
+        vulnerabilities, ethical hacking, and developing secure applications.
     </p>
 </section>
 
@@ -37,25 +39,26 @@
 
     <div class="card">
         <h3>Portfolio Website</h3>
-        <p>Created using HTML, CSS, JavaScript.</p>
+        <p>Built using HTML, CSS, and JavaScript.</p>
     </div>
 
     <div class="card">
         <h3>Contact Form with Node.js</h3>
-        <p>Backend built using Express.</p>
+        <p>Backend developed using Express.</p>
     </div>
 </section>
 
 <section id="contact" class="section">
     <h2>Contact Me</h2>
+
     <form id="contactForm">
-    <input type="text" id="name" placeholder="Enter your name">
-    <input type="email" id="email" placeholder="Enter your email">
-    <textarea id="message" placeholder="Send your message"></textarea>
-</form>
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <textarea id="message" placeholder="Send your message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
 
-<p id="responseMsg"></p>
-
+    <p id="responseMsg"></p>
 </section>
 
 <script src="script.js"></script>
