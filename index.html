@@ -1,51 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Julie | Portfolio</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
     <h2>Julie</h2>
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
-<section id="home" class="section">
-    <h1 class="typing">Hi, I'm <span>Julie</span></h1>
-    <p>A Cyber Security student building secure and modern web experiences.</p>
+<!-- HERO -->
+<section id="home" class="section hero">
+    <h1>Hi, I'm <span>Julie</span></h1>
+    <h3 class="typing"></h3>
+    <p>
+        I design secure, modern and visually engaging websites with a focus on user experience and cyber safety.
+    </p>
+
+    <button onclick="scrollToContact()">Hire Me</button>
 </section>
 
+<!-- ABOUT -->
 <section id="about" class="section">
     <h2>About Me</h2>
-    <p>I am currently pursuing BCA in Cyber Security. I specialize in ethical hacking, secure coding, and modern web development.</p>
+    <p>
+        I am a passionate Cyber Security student who loves building interactive websites 
+        and learning ethical hacking techniques. My goal is to create digital platforms 
+        that are both beautiful and secure.
+    </p>
+
+    <div class="about-box">
+        <div class="card">🎓 Student</div>
+        <div class="card">💻 Developer</div>
+        <div class="card">🔐 Security Learner</div>
+    </div>
 </section>
 
+<!-- SKILLS -->
+<section id="skills" class="section">
+    <h2>My Skills</h2>
+
+    <div class="grid">
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">JavaScript</div>
+        <div class="card">Node.js</div>
+        <div class="card">Cyber Security</div>
+        <div class="card">UI Design</div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
 <section id="projects" class="section">
     <h2>Projects</h2>
 
-    <div class="card">
-        <h3>Portfolio Website</h3>
-        <p>Responsive animated portfolio using HTML, CSS, JS.</p>
-    </div>
+    <div class="grid">
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Animated personal website with modern UI.</p>
+        </div>
 
-    <div class="card">
-        <h3>Contact Form Backend</h3>
-        <p>Node.js + Express backend for handling form submissions.</p>
+        <div class="card">
+            <h3>Contact API</h3>
+            <p>Node.js backend for handling user messages.</p>
+        </div>
+
+        <div class="card">
+            <h3>Security Notes</h3>
+            <p>Cyber security learning notes & examples.</p>
+        </div>
     </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="section">
     <h2>Contact Me</h2>
 
@@ -53,11 +95,13 @@
         <input type="text" id="name" placeholder="Your Name" required>
         <input type="email" id="email" placeholder="Your Email" required>
         <textarea id="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
 
-    <p id="responseMsg"></p>
+        <button type="submit" id="submitBtn">Send Message</button>
+    </form>
 </section>
+
+<!-- POPUP -->
+<div id="popup">Message Sent Successfully ✅</div>
 
 <script src="script.js"></script>
 
