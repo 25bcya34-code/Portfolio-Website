@@ -1,53 +1,36 @@
-const express = require('express');
-const mysql = require('mysql2');
-const bodyParser = require('body-parser');
-const cors = require('cors'); // Very important to allow the front end to talk to the back end
+const express = require("express");
+const mysql = require("mysql2");
+require("dotenv").config();
 
 const app = express();
-const port = 3001; // Back-end will run on port 3001
 
-// Middleware
-app.use(cors()); // Allow Cross-Origin Requests
-app.use(bodyParser.json()); // Support JSON-encoded bodies
+app.use(express.static("public"));
+app.use(express.json());
 
-// MySQL Connection Configuration
+// MySQL (WORKS LOCALLY + LIVE)
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root', // YOUR MYSQL USERNAME
-    password: 'yourpassword', // YOUR MYSQL PASSWORD
-    database: 'portfolio'
+host: process.env.DB_HOST,
+user: process.env.DB_USER,
+password: process.env.DB_PASSWORD,
+database: process.env.DB_NAME
 });
 
-// Connect to the database
-db.connect((err) => {
-    if (err) {
-        console.error('MySQL Connection Error:', err);
-    } else {
-        console.log('Successfully connected to MySQL');
-    }
+db.connect(err => {
+if (err) throw err;
+console.log("MySQL Connected");
 });
 
-// Define the API Endpoint (what the front end calls)
-app.post('/api/contact', (req, res) => {
-    const { name, email, message } = req.body;
-    console.log('Received Message:', { name, email, message });
+// API
+app.post("/contact", (req, res) => {
+const { name, email, message } = req.body;
 
-    // The SQL query to insert data
-    const query = 'INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)';
-    
-    // Execute the query securely using parameterized values
-    db.query(query, [name, email, message], (err, results) => {
-        if (err) {
-            console.error('Database Error:', err);
-            res.status(500).json({ error: 'Failed to save message' });
-        } else {
-            console.log('Message stored in database. ID:', results.insertId);
-            res.status(200).json({ status: 'success', id: results.insertId });
-        }
-    });
+const sql = "INSERT INTO messages (name, email, message) VALUES (?, ?, ?)";
+
+db.query(sql, [name, email, message], (err) => {
+if (err) return res.send("Error");
+
+res.send("✅ Message sent successfully!");
+});
 });
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+app.listen(process.env.PORT || 3000);
