@@ -1,54 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>My Portfolio</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julie | Visual Designer & Architect</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
-
 <body>
+    <div class="cursor-follower"></div>
 
-<div class="cursor"></div>
+    <nav class="glass-nav">
+        <div class="logo">JULIE.</div>
+        <div class="nav-links">
+            <a href="#vault">Vault</a>
+            <a href="#interests">Interests</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-<header>
-<h1>⚡ MySpace</h1>
-</header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="reveal-text">Hi, I'm <span class="accent">Julie</span></h1>
+            <p class="tagline">Visual Designer Engineering Impact through Code.</p>
+            <div class="cta-group">
+                <button class="primary-btn" onclick="document.getElementById('fileElem').click()">Upload to Vault</button>
+                <input type="file" id="fileElem" accept="image/*" hidden>
+            </div>
+        </div>
 
-<section class="hero">
-<div class="hero-container">
+        <div class="profile-container">
+            <div class="profile-frame">
+                <img src="image 3.png" alt="Julie" class="floating-img">
+            </div>
+        </div>
+    </section>
 
-<div class="hero-text">
-<h2>I am <span id="typing"></span></h2>
-<p>I build modern digital experiences.</p>
-</div>
+    <section id="vault" class="vault-section">
+        <h2 class="section-title">Visual Archives</h2>
+        <div id="gallery" class="bento-grid">
+            </div>
+    </section>
 
-<div class="hero-image">
-<img src="profile.jpg">
-</div>
+    <section id="interests" class="interests">
+        <div class="interest-card">
+            <div class="icon">🎨</div>
+            <h3>Visual Design</h3>
+            <p>Crafting high-end aesthetic experiences.</p>
+        </div>
+        <div class="interest-card">
+            <div class="icon">🎬</div>
+            <h3>Animation</h3>
+            <p>Bringing interfaces to life with GSAP.</p>
+        </div>
+        <div class="interest-card">
+            <div class="icon">💻</div>
+            <h3>Development</h3>
+            <p>Building robust full-stack solutions.</p>
+        </div>
+    </section>
 
-</div>
-</section>
+    <section id="contact" class="contact-section">
+        <div class="glass-form-card">
+            <h2>Secure Message</h2>
+            <form id="contact-form">
+                <div class="input-group">
+                    <input type="text" id="userName" required placeholder="Name">
+                </div>
+                <div class="input-group">
+                    <input type="email" id="userEmail" required placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <textarea id="userMessage" required placeholder="Tell me about your project..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send to Database</button>
+            </form>
+        </div>
+    </section>
 
-<section class="cards">
-<div class="card reveal">💻 Projects</div>
-<div class="card reveal">🎯 Skills</div>
-<div class="card reveal">🚀 Vision</div>
-</section>
+    <footer>
+        <p>&copy; 2026 Julie | Built with Node.js & MySQL</p>
+    </footer>
 
-<section class="contact">
-<h2>Contact Me</h2>
-
-<form id="contactForm">
-<input type="text" id="name" placeholder="Enter your name" required>
-<input type="email" id="email" placeholder="Enter your email" required>
-<textarea id="message" placeholder="Enter your message" required></textarea>
-<button type="submit">Send</button>
-</form>
-
-<p id="status"></p>
-
-</section>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
